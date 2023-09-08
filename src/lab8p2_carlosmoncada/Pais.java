@@ -46,7 +46,10 @@ public class Pais implements Serializable {
     public void setNadadores(ArrayList<Nadador> nadadores) {
         this.nadadores = nadadores;
     }
-
+    public void añadirnadador(Nadador n){
+    nadadores.add(n);
+    
+    }
     public int getNummedallas() {
         return nummedallas;
     }
@@ -60,35 +63,5 @@ public class Pais implements Serializable {
         return nombre;
     }
 
-    public void agregaralarchivo(Pais pais) {
-        try {
-            File archivo = new File("./PaisesParticipantes.pses");
-            FileOutputStream fw = new FileOutputStream(archivo);
-            ObjectOutputStream bw = new ObjectOutputStream(fw);
-            bw.writeObject(pais);
-            bw.flush();
-            bw.close();
-            fw.close();
-        } catch (Exception e) {
-        }
-
-    }
-
-    public ArrayList<Pais> leerarchivo() {
-        ArrayList<Pais> paises = new ArrayList();
-        try {
-
-            File archivo = new File("./PaisesParticipantes.pses");
-            FileInputStream fw = new FileInputStream(archivo);
-            ObjectInputStream bw = new ObjectInputStream(fw);
-            Pais temp = new Pais();
-            while ((temp = (Pais) bw.readObject()) != null) {
-                paises.add(temp);
-            }
-        } catch (Exception e) {
-        }
-
-        return paises;
-    }
 
 }

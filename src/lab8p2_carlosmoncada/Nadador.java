@@ -19,6 +19,11 @@ public class Nadador implements Serializable{
     String distancia;
     int tiempomasrapido;
     int nummedallas;
+    public Nadador(){
+    
+    
+    
+    }
 
     public Nadador(String nombre, Pais nacionalidad, int edad, double estatura, String estilonatacion, String distancia, int tiempomasrapido, int nummedallas) {
         this.nombre = nombre;
