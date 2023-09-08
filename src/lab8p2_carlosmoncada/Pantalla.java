@@ -413,20 +413,47 @@ public class Pantalla extends javax.swing.JFrame {
         String distancia = cb_distancia.getSelectedItem() + "";
         int tiempomasrapido = (int) sp_tiempomasrapido.getValue();
         int nummedallas = (int) sp_nummedallas.getValue();
-        nadadores.add(new Nadador(nombre, nacionalidad, edad, estatura, estilo, distancia, tiempomasrapido, nummedallas));
-        agregarnadadoralarchivo(nadadores.get(nadadores.size() - 1));
-       // DefaultListModel modelonadadores=(DefaultListModel)listanadadores.getModel();
+
+        // DefaultListModel modelonadadores=(DefaultListModel)listanadadores.getModel();
         //modelonadadores.addElement(nadadores.get(nadadores.size()-1));
         //listanadadores.setModel(modelonadadores);
+        if (estilo.equalsIgnoreCase("libre") && contlibre < 2) {
+            nadadores.add(new Nadador(nombre, nacionalidad, edad, estatura, estilo, distancia, tiempomasrapido, nummedallas));
+            agregarnadadoralarchivo(nadadores.get(nadadores.size() - 1));
+            movercontadores(nadadores);
+        } else {
+            JOptionPane.showMessageDialog(this, "No se pueden agregar mas de libre");
+        }
+        if (estilo.equalsIgnoreCase("pecho") && contpecho < 2) {
+         nadadores.add(new Nadador(nombre, nacionalidad, edad, estatura, estilo, distancia, tiempomasrapido, nummedallas));
+            agregarnadadoralarchivo(nadadores.get(nadadores.size() - 1));
+            movercontadores(nadadores);
+        }else{
+            JOptionPane.showMessageDialog(this, "No se pueden agregar mas de pecho");
+        }
+        if (estilo.equalsIgnoreCase("dorso") && contdorso < 2) {
+            nadadores.add(new Nadador(nombre, nacionalidad, edad, estatura, estilo, distancia, tiempomasrapido, nummedallas));
+            agregarnadadoralarchivo(nadadores.get(nadadores.size() - 1));
+            movercontadores(nadadores);
+        }else{
+            JOptionPane.showMessageDialog(this, "No se pueden agregar mas de dorso");
+        }
+        if (estilo.equalsIgnoreCase("mariposa")&&contmariposa<2) {
+             nadadores.add(new Nadador(nombre, nacionalidad, edad, estatura, estilo, distancia, tiempomasrapido, nummedallas));
+            agregarnadadoralarchivo(nadadores.get(nadadores.size() - 1));
+            movercontadores(nadadores);
+        }else{
+            JOptionPane.showMessageDialog(this, "No se pueden agregar mas de mariposa");
         
+        }
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         if (listapaises.getSelectedIndex() >= 0) {
             DefaultListModel modelojlist = (DefaultListModel) listapaises.getModel();
-            Pais p= (Pais)modelojlist.getElementAt(listapaises.getSelectedIndex());
+            Pais p = (Pais) modelojlist.getElementAt(listapaises.getSelectedIndex());
             modelojlist.removeElementAt(listapaises.getSelectedIndex());
-            DefaultComboBoxModel modelocombo= (DefaultComboBoxModel)cb_nacionalidad.getModel();
+            DefaultComboBoxModel modelocombo = (DefaultComboBoxModel) cb_nacionalidad.getModel();
             modelocombo.removeElement(p);
             cb_nacionalidad.setModel(modelocombo);
             listapaises.setModel(modelojlist);
@@ -444,7 +471,7 @@ public class Pantalla extends javax.swing.JFrame {
         }
         listapaises.setModel(modelolistapaises);
         cb_nacionalidad.setModel(modelopaises);
-        
+
     }
 
     public void agregareventoalarchivo(Eventos e) {
@@ -491,24 +518,26 @@ public class Pantalla extends javax.swing.JFrame {
         }
 
     }
-    public ArrayList<Nadador> recibirarchivonadadores(){
-    ArrayList<Nadador> nadadoresaux= new ArrayList();
+
+    public ArrayList<Nadador> recibirarchivonadadores() {
+        ArrayList<Nadador> nadadoresaux = new ArrayList();
         try {
-        File archivo = new File("./Nadador.nd");
-        FileInputStream fw= new FileInputStream(archivo);
-        ObjectInputStream bw= new ObjectInputStream(fw);
-        Nadador temp=new Nadador();
-            while ((temp=(Nadador)bw.readObject())!=null) {                
+            File archivo = new File("./Nadador.nd");
+            FileInputStream fw = new FileInputStream(archivo);
+            ObjectInputStream bw = new ObjectInputStream(fw);
+            Nadador temp = new Nadador();
+            while ((temp = (Nadador) bw.readObject()) != null) {
                 nadadoresaux.add(temp);
             }
             bw.close();
             fw.close();
         } catch (Exception e) {
         }
-    return nadadoresaux;
+        return nadadoresaux;
     }
-    public void movercontadores(ArrayList<Nadador> n){
-    
+
+    public void movercontadores(ArrayList<Nadador> n) {
+
         for (int i = 0; i < n.size(); i++) {
             if (n.get(i).getEstilonatacion().equalsIgnoreCase("libre")) {
                 contlibre++;
@@ -522,11 +551,9 @@ public class Pantalla extends javax.swing.JFrame {
             if (n.get(i).getEstilonatacion().equalsIgnoreCase("mariposa")) {
                 contmariposa++;
             }
-            
-            
+
         }
-        
-    
+
     }
 
     /**
@@ -567,10 +594,10 @@ public class Pantalla extends javax.swing.JFrame {
     ArrayList<Nadador> nadadores = new ArrayList();
     ArrayList<Pais> paises = new ArrayList();
     ArrayList<Eventos> eventos = new ArrayList();
-    int contlibre=0;
-    int contpecho=0;
-    int contdorso=0;
-    int contmariposa=0;
+    int contlibre = 0;
+    int contpecho = 0;
+    int contdorso = 0;
+    int contmariposa = 0;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cb_distancia;
