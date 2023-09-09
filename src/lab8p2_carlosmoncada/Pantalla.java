@@ -112,6 +112,7 @@ public class Pantalla extends javax.swing.JFrame {
         cb_nadador2 = new javax.swing.JComboBox<>();
         jLabel22 = new javax.swing.JLabel();
         cb_nadador3 = new javax.swing.JComboBox<>();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -573,6 +574,13 @@ public class Pantalla extends javax.swing.JFrame {
 
         jLabel22.setText("Nadador 3");
 
+        jButton9.setText("Simular");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -580,24 +588,30 @@ public class Pantalla extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(cb_eventosimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel16))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 533, Short.MAX_VALUE)
                             .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, 533, Short.MAX_VALUE)
-                                    .addComponent(jLabel19)
-                                    .addComponent(jProgressBar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(4, 4, 4)
+                                .addGap(44, 44, 44)
+                                .addComponent(cb_eventosimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addComponent(jLabel16))
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel10Layout.createSequentialGroup()
+                                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel17)
+                                            .addComponent(jLabel18)
+                                            .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, 533, Short.MAX_VALUE)
+                                            .addComponent(jLabel19)
+                                            .addComponent(jProgressBar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(4, 4, 4))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(jButton9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 289, Short.MAX_VALUE)))
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel22)
                     .addComponent(jLabel21)
@@ -623,8 +637,13 @@ public class Pantalla extends javax.swing.JFrame {
                         .addComponent(cb_nadador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel21)
-                .addGap(18, 18, 18)
-                .addComponent(cb_nadador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(cb_nadador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jButton9)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel22)
                 .addGap(18, 18, 18)
@@ -667,7 +686,7 @@ public class Pantalla extends javax.swing.JFrame {
         String nombre = txt_nombre.getText();
         int nummedallas = (int) sp_numeromedallas.getValue();
         paises.add(new Pais(nombre, nummedallas));
-
+        
         agregaralarchivo(paises);
         txt_nombre.setText("");
         sp_numeromedallas.setValue(0);
@@ -691,10 +710,10 @@ public class Pantalla extends javax.swing.JFrame {
         DefaultListModel modelolista = (DefaultListModel) listaeventos.getModel();
         modelolista.addElement(eventos.get(eventos.size() - 1));
         listaeventos.setModel(modelolista);
-        DefaultComboBoxModel modeloeventod=(DefaultComboBoxModel)cb_eventosimulacion.getModel();
+        DefaultComboBoxModel modeloeventod = (DefaultComboBoxModel) cb_eventosimulacion.getModel();
         modeloeventod.addElement(eventos.get(eventos.size() - 1));
         cb_eventosimulacion.setModel(modeloeventod);
-        
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -708,7 +727,7 @@ public class Pantalla extends javax.swing.JFrame {
         int nummedallas = (int) sp_nummedallas.getValue();
         nombrenadador.setText("");
         txt_estatura.setText("");
-
+        
         boolean agregado = false;
         // if (estilo.equalsIgnoreCase("libre") && contlibre < 3) {
         if (agregado == false) {
@@ -722,13 +741,13 @@ public class Pantalla extends javax.swing.JFrame {
             DefaultListModel modelolistaeliminar = (DefaultListModel) listanadadores.getModel();
             modelolistaeliminar.addElement(nadadores.get(nadadores.size() - 1));
             listanadadores.setModel(modelolistaeliminar);
-            DefaultComboBoxModel nadador1=(DefaultComboBoxModel)cb_nadador1.getModel();
+            DefaultComboBoxModel nadador1 = (DefaultComboBoxModel) cb_nadador1.getModel();
             nadador1.addElement(nadadores.get(nadadores.size() - 1));
             cb_nadador1.setModel(nadador1);
-            DefaultComboBoxModel nadador2=(DefaultComboBoxModel)cb_nadador2.getModel();
+            DefaultComboBoxModel nadador2 = (DefaultComboBoxModel) cb_nadador2.getModel();
             nadador2.addElement(nadadores.get(nadadores.size() - 1));
             cb_nadador2.setModel(nadador2);
-            DefaultComboBoxModel nadador3=(DefaultComboBoxModel)cb_nadador3.getModel();
+            DefaultComboBoxModel nadador3 = (DefaultComboBoxModel) cb_nadador3.getModel();
             nadador3.addElement(nadadores.get(nadadores.size() - 1));
             cb_nadador3.setModel(nadador3);
         }
@@ -796,7 +815,7 @@ public class Pantalla extends javax.swing.JFrame {
             modelocombo.removeElement(p);
             cb_nacionalidad.setModel(modelocombo);
             listapaises.setModel(modelojlist);
-
+            
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
@@ -814,19 +833,19 @@ public class Pantalla extends javax.swing.JFrame {
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         DefaultTableModel modelotabla = (DefaultTableModel) tablanadadores.getModel();
-
+        
         for (int i = 0; i < nadadores.size(); i++) {
             Object[] object = {nadadores.get(i).getNombre(), nadadores.get(i).getNacionalidad(), nadadores.get(i).getEdad(), nadadores.get(i).getEstatura(), nadadores.get(i).getEstilonatacion(), nadadores.get(i).getDistancia(), nadadores.get(i).getTiempomasrapido(), nadadores.get(i).getNummedallas()};
             modelotabla.addRow(object);
         }
         tablanadadores.setModel(modelotabla);
-
+        
 
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
         DefaultTableModel modelotabla = (DefaultTableModel) tablilla.getModel();
-
+        
         for (int i = 0; i < eventos.size(); i++) {
             Object[] object = {eventos.get(i).estilo, eventos.get(i).distancia, eventos.get(i).records};
             modelotabla.addRow(object);
@@ -843,19 +862,92 @@ public class Pantalla extends javax.swing.JFrame {
         modelonad.removeElementAt(listanadadores.getSelectedIndex());
         cb_nadadoresagregar.setModel(modelonad);
         nadadores.remove(n);
-
+        
 
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         DefaultListModel eliminar = (DefaultListModel) listaeventos.getModel();
-
+        
         eliminar.remove(listaeventos.getSelectedIndex());
         Eventos e = (Eventos) eliminar.getElementAt(listaeventos.getSelectedIndex());
         eventos.remove(e);
         listaeventos.setModel(eliminar);
 
     }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        Eventos e = (Eventos) cb_eventosimulacion.getSelectedItem();
+        int distancia = Integer.parseInt(e.getDistancia());
+        String estilo = e.estilo;
+        Nadador nadador1 = (Nadador) cb_nadador1.getSelectedItem();
+        Nadador nadador2 = (Nadador) cb_nadador2.getSelectedItem();
+        Nadador nadador3 = (Nadador) cb_nadador3.getSelectedItem();
+        boolean es = false;
+        boolean dixtancia = false;
+        if (estilo.equalsIgnoreCase(nadador1.estilonatacion)) {
+            if (estilo.equalsIgnoreCase(nadador2.estilonatacion)) {
+                if (estilo.equalsIgnoreCase(nadador3.estilonatacion)) {
+                    es = true;
+                }
+            }
+        }
+        if (distancia == Integer.parseInt(nadador1.getDistancia())) {
+            if (distancia == Integer.parseInt(nadador2.getDistancia())) {
+                if (distancia == Integer.parseInt(nadador3.getDistancia())) {
+                    dixtancia = true;
+                }
+            }
+        }
+        
+        if (dixtancia == true && es == true) {
+            Nadador1 nadadorone=new Nadador1(distancia, jProgressBar1);
+            nadadorone.start();
+            Nadador2 nadadortwo=new Nadador2(distancia, jProgressBar2);
+            nadadortwo.start();
+            Nadador3 nadadorthree=new Nadador3(distancia, jProgressBar3);
+            nadadorthree.start();
+            
+            for (int i = 0; i < 3; i++) {
+                int random=(int) ((Math.random() * (10 - 0)) + 0);
+                if (nadadorone.isGanador()) {
+                    if (nadadortwo.isGanador()) {
+                        if (nadadorthree.isGanador()) {
+                            switch (i) {
+                                case 0:
+                                    nadadorone.setRandom(random);
+                                    break;
+                                case 1:
+                                    nadadortwo.setRandom(random);
+                                    break;
+                                    case 2:
+                                    nadadorthree.setRandom(random);
+                                    break;
+                            }
+                        }else{
+                        i=10;
+                        }
+                    }else{
+                        i=10;
+                    }
+                }else{
+                    i=10;
+                }
+ 
+        }
+            if (nadadorone.isGanador()) {
+                JOptionPane.showMessageDialog(this, "Gano el nadador 1");
+            }
+            if (nadadortwo.isGanador()) {
+                JOptionPane.showMessageDialog(this, "Gano el nadador 2");
+            }
+            if (nadadorthree.isGanador()) {
+                JOptionPane.showMessageDialog(this, "Gano el nadador 3");
+            }
+        }
+        
+
+    }//GEN-LAST:event_jButton9MouseClicked
     public void activarcombobox() {
         Pais x = new Pais();
         ArrayList<Pais> agregarpaises = leerarchivo();
@@ -889,20 +981,19 @@ public class Pantalla extends javax.swing.JFrame {
             mod.addElement(eventos.get(i));
         }
         listaeventos.setModel(mod);
-        DefaultComboBoxModel nadador1=(DefaultComboBoxModel)cb_nadador1.getModel();
-          nadador1.addAll(nadadores);
-          cb_nadador1.setModel(nadador1);
-            
-            
-            DefaultComboBoxModel nadador2=(DefaultComboBoxModel)cb_nadador2.getModel();
-            
-            nadador2.addAll(nadadores);
-          cb_nadador2.setModel(nadador2);
-            DefaultComboBoxModel nadador3=(DefaultComboBoxModel)cb_nadador3.getModel();
-            nadador3.addAll(nadadores);
-          cb_nadador1.setModel(nadador3);
+        DefaultComboBoxModel nadador1 = (DefaultComboBoxModel) cb_nadador1.getModel();
+        nadador1.addAll(nadadores);
+        cb_nadador1.setModel(nadador1);
+        
+        DefaultComboBoxModel nadador2 = (DefaultComboBoxModel) cb_nadador2.getModel();
+        
+        nadador2.addAll(nadadores);
+        cb_nadador2.setModel(nadador2);
+        DefaultComboBoxModel nadador3 = (DefaultComboBoxModel) cb_nadador3.getModel();
+        nadador3.addAll(nadadores);
+        cb_nadador1.setModel(nadador3);
     }
-
+    
     public void agregareventoalarchivo(Eventos e) {
         try {
             File archivo = new File("./Eventos.ev");
@@ -914,9 +1005,9 @@ public class Pantalla extends javax.swing.JFrame {
             fw.close();
         } catch (Exception x) {
         }
-
+        
     }
-
+    
     public ArrayList<Eventos> recibirarchivo() {
         ArrayList<Eventos> eventillos = new ArrayList();
         try {
@@ -927,13 +1018,13 @@ public class Pantalla extends javax.swing.JFrame {
             while ((eventsoaux = (Eventos) bw.readObject()) != null) {
                 eventillos.add(eventsoaux);
             }
-
+            
         } catch (Exception e) {
         }
-
+        
         return eventillos;
     }
-
+    
     public void agregarnadadoralarchivo(ArrayList<Nadador> a) {
         try {
             File archivo = new File("./Nadador.nd");
@@ -942,15 +1033,15 @@ public class Pantalla extends javax.swing.JFrame {
             for (int i = 0; i < a.size(); i++) {
                 bw.writeObject(a.get(i));
             }
-
+            
             bw.flush();
             bw.close();
             fw.close();
         } catch (Exception x) {
         }
-
+        
     }
-
+    
     public ArrayList<Nadador> recibirarchivonadadores() {
         ArrayList<Nadador> nadadoresaux = new ArrayList();
         try {
@@ -967,9 +1058,9 @@ public class Pantalla extends javax.swing.JFrame {
         }
         return nadadoresaux;
     }
-
+    
     public void movercontadores(ArrayList<Nadador> n) {
-
+        
         for (int i = 0; i < n.size(); i++) {
             if (n.get(i).getEstilonatacion().equalsIgnoreCase("libre")) {
                 contlibre++;
@@ -983,55 +1074,55 @@ public class Pantalla extends javax.swing.JFrame {
             if (n.get(i).getEstilonatacion().equalsIgnoreCase("mariposa")) {
                 contmariposa++;
             }
-
+            
         }
-
+        
     }
-
+    
     public void agregaralarchivo(ArrayList<Pais> paises) {
         try {
             File archivo = new File("./PaisesParticipantes.pses");
-
+            
             FileOutputStream fw = new FileOutputStream(archivo);
             ObjectOutputStream bw = new ObjectOutputStream(fw);
             for (int i = 0; i < paises.size(); i++) {
                 bw.writeObject(paises.get(i));
             }
-
+            
             bw.flush();
             bw.close();
             fw.close();
-
+            
         } catch (Exception e) {
         }
-
+        
     }
-
+    
     public ArrayList<Pais> leerarchivo() {
         ArrayList<Pais> paises = new ArrayList();
         try {
-
+            
             File archivo = new File("./PaisesParticipantes.pses");
             if (archivo.exists()) {
-
+                
                 FileInputStream fw = new FileInputStream(archivo);
                 ObjectInputStream bw = new ObjectInputStream(fw);
                 Pais temp = new Pais();
                 try {
                     while ((temp = (Pais) bw.readObject()) != null) {
                         paises.add(temp);
-
+                        
                     }
                 } catch (Exception e) {
                 }
-
+                
                 fw.close();
                 bw.close();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        
         return paises;
     }
 
@@ -1099,6 +1190,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

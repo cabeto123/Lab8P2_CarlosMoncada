@@ -14,6 +14,7 @@ public class Nadador2 extends Thread {
    int distancia;
     JProgressBar pg;
     int random;
+    boolean ganador;
     
     public Nadador2(int distancia, JProgressBar pg) {
         this.distancia = distancia;
@@ -35,7 +36,15 @@ public class Nadador2 extends Thread {
     
     
     }
+    
+    public int getRandom() {
+        return random;
+    }
 
+    public void setRandom(int random) {
+        this.random = random;
+    }
+    
     public int getDistancia() {
         return distancia;
     }
@@ -51,4 +60,13 @@ public class Nadador2 extends Thread {
     public void setPg(JProgressBar pg) {
         this.pg = pg;
     }  
+
+    public boolean isGanador() {
+        return ganador;
+    }
+
+    public void setGanador(boolean ganador) {
+        this.ganador = ganador;
+    }
+    
 }
