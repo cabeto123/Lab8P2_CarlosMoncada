@@ -96,6 +96,22 @@ public class Pantalla extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         listaeventos = new javax.swing.JList<>();
+        jButton8 = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        cb_eventosimulacion = new javax.swing.JComboBox<>();
+        jLabel16 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jProgressBar2 = new javax.swing.JProgressBar();
+        jLabel19 = new javax.swing.JLabel();
+        jProgressBar3 = new javax.swing.JProgressBar();
+        cb_nadador1 = new javax.swing.JComboBox<>();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        cb_nadador2 = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        cb_nadador3 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -303,9 +319,9 @@ public class Pantalla extends javax.swing.JFrame {
                             .addComponent(cb_nadadoresagregar, 0, 153, Short.MAX_VALUE)
                             .addComponent(cb_paisesagregarsiu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(243, 243, 243)
+                        .addGap(192, 192, 192)
                         .addComponent(jButton4)))
-                .addContainerGap(835, Short.MAX_VALUE))
+                .addContainerGap(886, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,9 +334,9 @@ public class Pantalla extends javax.swing.JFrame {
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cb_paisesagregarsiu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 620, Short.MAX_VALUE)
+                .addGap(83, 83, 83)
                 .addComponent(jButton4)
-                .addGap(95, 95, 95))
+                .addContainerGap(632, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Agregar nadador a pais", jPanel6);
@@ -510,13 +526,25 @@ public class Pantalla extends javax.swing.JFrame {
 
         jScrollPane5.setViewportView(listaeventos);
 
+        jButton8.setText("Eliminar ");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(205, 205, 205)
+                        .addComponent(jButton8)))
                 .addContainerGap(578, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -524,10 +552,99 @@ public class Pantalla extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(79, 79, 79)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(492, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addComponent(jButton8)
+                .addContainerGap(423, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Eliminar Eventos", jPanel9);
+
+        jLabel16.setText("Evento");
+
+        jLabel17.setText("Nadador 1");
+
+        jLabel18.setText("Nadador 2");
+
+        jLabel19.setText("Nadador 3");
+
+        jLabel20.setText("Nadador 1");
+
+        jLabel21.setText("Nadador 2");
+
+        jLabel22.setText("Nadador 3");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(cb_eventosimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jLabel16))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 533, Short.MAX_VALUE)
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, 533, Short.MAX_VALUE)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jProgressBar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel21)
+                    .addComponent(cb_nadador1, 0, 121, Short.MAX_VALUE)
+                    .addComponent(jLabel20)
+                    .addComponent(cb_nadador2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cb_nadador3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(464, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cb_eventosimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cb_nadador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel21)
+                .addGap(18, 18, 18)
+                .addComponent(cb_nadador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addComponent(cb_nadador3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel17)
+                .addGap(24, 24, 24)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jProgressBar3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(431, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Simulacion", jPanel10);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -539,7 +656,7 @@ public class Pantalla extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 883, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
@@ -572,8 +689,12 @@ public class Pantalla extends javax.swing.JFrame {
         eventos.add(new Eventos(estilos, distancia, records));
         agregareventoalarchivo(eventos.get(eventos.size() - 1));
         DefaultListModel modelolista = (DefaultListModel) listaeventos.getModel();
-        modelolista.addElement(eventos.get(eventos.size()-1));
+        modelolista.addElement(eventos.get(eventos.size() - 1));
         listaeventos.setModel(modelolista);
+        DefaultComboBoxModel modeloeventod=(DefaultComboBoxModel)cb_eventosimulacion.getModel();
+        modeloeventod.addElement(eventos.get(eventos.size() - 1));
+        cb_eventosimulacion.setModel(modeloeventod);
+        
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -601,6 +722,15 @@ public class Pantalla extends javax.swing.JFrame {
             DefaultListModel modelolistaeliminar = (DefaultListModel) listanadadores.getModel();
             modelolistaeliminar.addElement(nadadores.get(nadadores.size() - 1));
             listanadadores.setModel(modelolistaeliminar);
+            DefaultComboBoxModel nadador1=(DefaultComboBoxModel)cb_nadador1.getModel();
+            nadador1.addElement(nadadores.get(nadadores.size() - 1));
+            cb_nadador1.setModel(nadador1);
+            DefaultComboBoxModel nadador2=(DefaultComboBoxModel)cb_nadador2.getModel();
+            nadador2.addElement(nadadores.get(nadadores.size() - 1));
+            cb_nadador2.setModel(nadador2);
+            DefaultComboBoxModel nadador3=(DefaultComboBoxModel)cb_nadador3.getModel();
+            nadador3.addElement(nadadores.get(nadadores.size() - 1));
+            cb_nadador3.setModel(nadador3);
         }
 
 //        } else {
@@ -678,6 +808,7 @@ public class Pantalla extends javax.swing.JFrame {
                 paises.get(i).añadirnadador(n);
             }
         }
+        
 
     }//GEN-LAST:event_jButton4MouseClicked
 
@@ -715,6 +846,16 @@ public class Pantalla extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        DefaultListModel eliminar = (DefaultListModel) listaeventos.getModel();
+
+        eliminar.remove(listaeventos.getSelectedIndex());
+        Eventos e = (Eventos) eliminar.getElementAt(listaeventos.getSelectedIndex());
+        eventos.remove(e);
+        listaeventos.setModel(eliminar);
+
+    }//GEN-LAST:event_jButton8MouseClicked
     public void activarcombobox() {
         Pais x = new Pais();
         ArrayList<Pais> agregarpaises = leerarchivo();
@@ -743,12 +884,23 @@ public class Pantalla extends javax.swing.JFrame {
             modelodc.addElement(nadadores.get(i));
         }
         listanadadores.setModel(modelodc);
-        DefaultListModel mod=(DefaultListModel)listaeventos.getModel();
-        for (int i = 0; i <eventos.size(); i++) {
+        DefaultListModel mod = (DefaultListModel) listaeventos.getModel();
+        for (int i = 0; i < eventos.size(); i++) {
             mod.addElement(eventos.get(i));
         }
         listaeventos.setModel(mod);
-        
+        DefaultComboBoxModel nadador1=(DefaultComboBoxModel)cb_nadador1.getModel();
+          nadador1.addAll(nadadores);
+          cb_nadador1.setModel(nadador1);
+            
+            
+            DefaultComboBoxModel nadador2=(DefaultComboBoxModel)cb_nadador2.getModel();
+            
+            nadador2.addAll(nadadores);
+          cb_nadador2.setModel(nadador2);
+            DefaultComboBoxModel nadador3=(DefaultComboBoxModel)cb_nadador3.getModel();
+            nadador3.addAll(nadadores);
+          cb_nadador1.setModel(nadador3);
     }
 
     public void agregareventoalarchivo(Eventos e) {
@@ -931,7 +1083,11 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_distanciaevento;
     private javax.swing.JComboBox<String> cb_estilo;
     private javax.swing.JComboBox<String> cb_estilos;
+    private javax.swing.JComboBox<String> cb_eventosimulacion;
     private javax.swing.JComboBox<String> cb_nacionalidad;
+    private javax.swing.JComboBox<String> cb_nadador1;
+    private javax.swing.JComboBox<String> cb_nadador2;
+    private javax.swing.JComboBox<String> cb_nadador3;
     private javax.swing.JComboBox<String> cb_nadadoresagregar;
     private javax.swing.JComboBox<String> cb_paisesagregarsiu;
     private javax.swing.JButton crearpais;
@@ -942,6 +1098,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -949,7 +1106,14 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -958,6 +1122,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -966,6 +1131,9 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JProgressBar jProgressBar2;
+    private javax.swing.JProgressBar jProgressBar3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
