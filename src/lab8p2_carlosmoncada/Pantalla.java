@@ -93,6 +93,9 @@ public class Pantalla extends javax.swing.JFrame {
         sp_nummedallas = new javax.swing.JSpinner();
         jButton2 = new javax.swing.JButton();
         txt_estatura = new javax.swing.JTextField();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        listaeventos = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,7 +139,7 @@ public class Pantalla extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(sp_numeromedallas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 587, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 575, Short.MAX_VALUE)
                 .addComponent(crearpais)
                 .addGap(104, 104, 104))
         );
@@ -198,7 +201,7 @@ public class Pantalla extends javax.swing.JFrame {
                 .addComponent(cb_estilos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72)
                 .addComponent(jButton1)
-                .addContainerGap(564, Short.MAX_VALUE))
+                .addContainerGap(552, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear eventos", jPanel2);
@@ -270,7 +273,7 @@ public class Pantalla extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jButton5)
-                .addContainerGap(545, Short.MAX_VALUE))
+                .addContainerGap(533, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Eliminar Nadadores", jPanel5);
@@ -315,7 +318,7 @@ public class Pantalla extends javax.swing.JFrame {
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cb_paisesagregarsiu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 632, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 620, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addGap(95, 95, 95))
         );
@@ -359,7 +362,7 @@ public class Pantalla extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jButton6)
-                .addContainerGap(440, Short.MAX_VALUE))
+                .addContainerGap(428, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Listar nadadores", jPanel7);
@@ -374,7 +377,7 @@ public class Pantalla extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tablilla);
 
-        jButton7.setText("jButton7");
+        jButton7.setText("Listar");
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton7MouseClicked(evt);
@@ -402,7 +405,7 @@ public class Pantalla extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton7)
-                .addContainerGap(378, Short.MAX_VALUE))
+                .addContainerGap(366, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Listar eventos", jPanel8);
@@ -500,10 +503,31 @@ public class Pantalla extends javax.swing.JFrame {
                     .addComponent(txt_estatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(74, 74, 74)
                 .addComponent(jButton2)
-                .addContainerGap(528, Short.MAX_VALUE))
+                .addContainerGap(516, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear Nadador", jPanel3);
+
+        jScrollPane5.setViewportView(listaeventos);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(578, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(492, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Eliminar Eventos", jPanel9);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -513,7 +537,10 @@ public class Pantalla extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 883, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -544,6 +571,9 @@ public class Pantalla extends javax.swing.JFrame {
         String estilos = cb_estilos.getSelectedItem() + "";
         eventos.add(new Eventos(estilos, distancia, records));
         agregareventoalarchivo(eventos.get(eventos.size() - 1));
+        DefaultListModel modelolista = (DefaultListModel) listaeventos.getModel();
+        modelolista.addElement(eventos.get(eventos.size()-1));
+        listaeventos.setModel(modelolista);
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -678,11 +708,11 @@ public class Pantalla extends javax.swing.JFrame {
         DefaultListModel modelolista = (DefaultListModel) listanadadores.getModel();
         modelolista.remove(listanadadores.getSelectedIndex());
         listanadadores.setModel(modelolista);
-        Nadador n=(Nadador)modelolista.getElementAt(listanadadores.getSelectedIndex());
+        Nadador n = (Nadador) modelolista.getElementAt(listanadadores.getSelectedIndex());
         modelonad.removeElementAt(listanadadores.getSelectedIndex());
         cb_nadadoresagregar.setModel(modelonad);
         nadadores.remove(n);
-        
+
 
     }//GEN-LAST:event_jButton5MouseClicked
     public void activarcombobox() {
@@ -708,13 +738,18 @@ public class Pantalla extends javax.swing.JFrame {
         }
         cb_nadadoresagregar.setModel(modeloagregarnadadores);
         eventos = recibirarchivo();
-         DefaultListModel modelodc=(DefaultListModel)listanadadores.getModel();
-         for (int i = 0; i < nadadores.size(); i++) {
+        DefaultListModel modelodc = (DefaultListModel) listanadadores.getModel();
+        for (int i = 0; i < nadadores.size(); i++) {
             modelodc.addElement(nadadores.get(i));
         }
-         listanadadores.setModel(modelodc);
-    }
+        listanadadores.setModel(modelodc);
+        DefaultListModel mod=(DefaultListModel)listaeventos.getModel();
+        for (int i = 0; i <eventos.size(); i++) {
+            mod.addElement(eventos.get(i));
+        }
+        listaeventos.setModel(mod);
         
+    }
 
     public void agregareventoalarchivo(Eventos e) {
         try {
@@ -930,11 +965,14 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JList<String> listaeventos;
     private javax.swing.JList<String> listanadadores;
     private javax.swing.JList<String> listapaises;
     private javax.swing.JTextField nombrenadador;
