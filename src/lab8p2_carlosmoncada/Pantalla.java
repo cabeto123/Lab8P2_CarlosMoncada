@@ -687,7 +687,7 @@ public class Pantalla extends javax.swing.JFrame {
         String nombre = txt_nombre.getText();
         int nummedallas = (int) sp_numeromedallas.getValue();
         paises.add(new Pais(nombre, nummedallas));
-        
+
         agregaralarchivo(paises);
         txt_nombre.setText("");
         sp_numeromedallas.setValue(0);
@@ -729,7 +729,7 @@ public class Pantalla extends javax.swing.JFrame {
         int nummedallas = (int) sp_nummedallas.getValue();
         nombrenadador.setText("");
         txt_estatura.setText("");
-        
+
         boolean agregado = false;
         // if (estilo.equalsIgnoreCase("libre") && contlibre < 3) {
         if (agregado == false) {
@@ -817,7 +817,7 @@ public class Pantalla extends javax.swing.JFrame {
             modelocombo.removeElement(p);
             cb_nacionalidad.setModel(modelocombo);
             listapaises.setModel(modelojlist);
-            
+
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
@@ -829,25 +829,25 @@ public class Pantalla extends javax.swing.JFrame {
                 paises.get(i).añadirnadador(n);
             }
         }
-        
+
 
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         DefaultTableModel modelotabla = (DefaultTableModel) tablanadadores.getModel();
-        
+
         for (int i = 0; i < nadadores.size(); i++) {
             Object[] object = {nadadores.get(i).getNombre(), nadadores.get(i).getNacionalidad(), nadadores.get(i).getEdad(), nadadores.get(i).getEstatura(), nadadores.get(i).getEstilonatacion(), nadadores.get(i).getDistancia(), nadadores.get(i).getTiempomasrapido(), nadadores.get(i).getNummedallas()};
             modelotabla.addRow(object);
         }
         tablanadadores.setModel(modelotabla);
-        
+
 
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
         DefaultTableModel modelotabla = (DefaultTableModel) tablilla.getModel();
-        
+
         for (int i = 0; i < eventos.size(); i++) {
             Object[] object = {eventos.get(i).estilo, eventos.get(i).distancia, eventos.get(i).records};
             modelotabla.addRow(object);
@@ -864,13 +864,13 @@ public class Pantalla extends javax.swing.JFrame {
         modelonad.removeElementAt(listanadadores.getSelectedIndex());
         cb_nadadoresagregar.setModel(modelonad);
         nadadores.remove(n);
-        
+
 
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         DefaultListModel eliminar = (DefaultListModel) listaeventos.getModel();
-        
+
         eliminar.remove(listaeventos.getSelectedIndex());
         Eventos e = (Eventos) eliminar.getElementAt(listaeventos.getSelectedIndex());
         eventos.remove(e);
@@ -901,65 +901,64 @@ public class Pantalla extends javax.swing.JFrame {
                 }
             }
         }
-        
+
         if (dixtancia == true && es == true) {
-            Nadador1 nadadorone=new Nadador1(distancia, jProgressBar1);
-            
-            Nadador2 nadadortwo=new Nadador2(distancia, jProgressBar2);
-            
-            Nadador3 nadadorthree=new Nadador3(distancia, jProgressBar3);
-           boolean ganador1=false;
-           boolean ganador2=false;
-           boolean ganador3=false;
-           nadadorone.start();
-             
-             
-                       nadadortwo.start();
-             
-             
-                       nadadorthree.start();
-           int contjugador=0;
-           
-           while(ganador1==false&&ganador2==false&&ganador3==false) {
-               if (contjugador==3) {
-                   contjugador=1;
-               }
-               
-            int random=(int) ((Math.random() * (10- 1)) + 1);
-               switch (contjugador) {
-                   case 1:
-                       
-                       nadadorone.setRandom(random);
-                       
-                       break;
-                   case 2:
-                       nadadortwo.setRandom(random);
-                       break;
-                   case 3:
-                       nadadorthree.setRandom(random);
-                       break;
-                   
-               }
-            if (nadadorone.isGanador()) {
-                ganador1=true;
-                JOptionPane.showMessageDialog(this, "Gano el nadador 1");
-                break;
+            Nadador1 nadadorone = new Nadador1(distancia, jProgressBar1);
+
+            Nadador2 nadadortwo = new Nadador2(distancia, jProgressBar2);
+
+            Nadador3 nadadorthree = new Nadador3(distancia, jProgressBar3);
+            boolean ganador1 = false;
+            boolean ganador2 = false;
+            boolean ganador3 = false;
+            nadadorone.start();
+
+            nadadortwo.start();
+
+            nadadorthree.start();
+            int contjugador = 0;
+
+            while (ganador1 == false && ganador2 == false && ganador3 == false) {
+                if (contjugador == 3) {
+                    contjugador = 1;
+                }
+
+                int random = (int) ((Math.random() * (10 - 1)) + 1);
+                System.out.println(random);
+                switch (contjugador) {
+                    case 1:
+
+                        nadadorone.setRandom(random);
+
+                        break;
+                    case 2:
+                        nadadortwo.setRandom(random);
+                        break;
+                    case 3:
+                        nadadorthree.setRandom(random);
+                        break;
+
+                }
+                if (nadadorone.isGanador()) {
+                    ganador1 = true;
+                    JOptionPane.showMessageDialog(this, "Gano el nadador 1");
+                    break;
+                }
+                if (nadadortwo.isGanador()) {
+                    ganador2 = true;
+                    JOptionPane.showMessageDialog(this, "Gano el nadador 2");
+                    break;
+                }
+                if (nadadorthree.isGanador()) {
+                    ganador3 = true;
+                    JOptionPane.showMessageDialog(this, "Gano el nadador 3");
+                    break;
+                }
+                contjugador++;
             }
-            if (nadadortwo.isGanador()) {
-                ganador2=true;
-                JOptionPane.showMessageDialog(this, "Gano el nadador 2");
-                break;
-            }
-            if (nadadorthree.isGanador()) {
-                ganador3=true;
-                JOptionPane.showMessageDialog(this, "Gano el nadador 3");
-                break;
-            }   
-            contjugador++;
-           }
-            
+
         }
-        
+
 
     }//GEN-LAST:event_jButton9MouseClicked
     public void activarcombobox() {
@@ -998,16 +997,16 @@ public class Pantalla extends javax.swing.JFrame {
         DefaultComboBoxModel nadador1 = (DefaultComboBoxModel) cb_nadador1.getModel();
         nadador1.addAll(nadadores);
         cb_nadador1.setModel(nadador1);
-        
+
         DefaultComboBoxModel nadador2 = (DefaultComboBoxModel) cb_nadador2.getModel();
-        
+
         nadador2.addAll(nadadores);
         cb_nadador2.setModel(nadador2);
         DefaultComboBoxModel nadador3 = (DefaultComboBoxModel) cb_nadador3.getModel();
         nadador3.addAll(nadadores);
         cb_nadador1.setModel(nadador3);
     }
-    
+
     public void agregareventoalarchivo(Eventos e) {
         try {
             File archivo = new File("./Eventos.ev");
@@ -1019,9 +1018,9 @@ public class Pantalla extends javax.swing.JFrame {
             fw.close();
         } catch (Exception x) {
         }
-        
+
     }
-    
+
     public ArrayList<Eventos> recibirarchivo() {
         ArrayList<Eventos> eventillos = new ArrayList();
         try {
@@ -1032,13 +1031,13 @@ public class Pantalla extends javax.swing.JFrame {
             while ((eventsoaux = (Eventos) bw.readObject()) != null) {
                 eventillos.add(eventsoaux);
             }
-            
+
         } catch (Exception e) {
         }
-        
+
         return eventillos;
     }
-    
+
     public void agregarnadadoralarchivo(ArrayList<Nadador> a) {
         try {
             File archivo = new File("./Nadador.nd");
@@ -1047,15 +1046,15 @@ public class Pantalla extends javax.swing.JFrame {
             for (int i = 0; i < a.size(); i++) {
                 bw.writeObject(a.get(i));
             }
-            
+
             bw.flush();
             bw.close();
             fw.close();
         } catch (Exception x) {
         }
-        
+
     }
-    
+
     public ArrayList<Nadador> recibirarchivonadadores() {
         ArrayList<Nadador> nadadoresaux = new ArrayList();
         try {
@@ -1072,9 +1071,9 @@ public class Pantalla extends javax.swing.JFrame {
         }
         return nadadoresaux;
     }
-    
+
     public void movercontadores(ArrayList<Nadador> n) {
-        
+
         for (int i = 0; i < n.size(); i++) {
             if (n.get(i).getEstilonatacion().equalsIgnoreCase("libre")) {
                 contlibre++;
@@ -1088,55 +1087,55 @@ public class Pantalla extends javax.swing.JFrame {
             if (n.get(i).getEstilonatacion().equalsIgnoreCase("mariposa")) {
                 contmariposa++;
             }
-            
+
         }
-        
+
     }
-    
+
     public void agregaralarchivo(ArrayList<Pais> paises) {
         try {
             File archivo = new File("./PaisesParticipantes.pses");
-            
+
             FileOutputStream fw = new FileOutputStream(archivo);
             ObjectOutputStream bw = new ObjectOutputStream(fw);
             for (int i = 0; i < paises.size(); i++) {
                 bw.writeObject(paises.get(i));
             }
-            
+
             bw.flush();
             bw.close();
             fw.close();
-            
+
         } catch (Exception e) {
         }
-        
+
     }
-    
+
     public ArrayList<Pais> leerarchivo() {
         ArrayList<Pais> paises = new ArrayList();
         try {
-            
+
             File archivo = new File("./PaisesParticipantes.pses");
             if (archivo.exists()) {
-                
+
                 FileInputStream fw = new FileInputStream(archivo);
                 ObjectInputStream bw = new ObjectInputStream(fw);
                 Pais temp = new Pais();
                 try {
                     while ((temp = (Pais) bw.readObject()) != null) {
                         paises.add(temp);
-                        
+
                     }
                 } catch (Exception e) {
                 }
-                
+
                 fw.close();
                 bw.close();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         return paises;
     }
 

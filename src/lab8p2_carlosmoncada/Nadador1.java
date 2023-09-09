@@ -36,6 +36,10 @@ public class Nadador1 extends Thread {
                ganador=true; 
                break;
             }
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+            }
         }
     
     
