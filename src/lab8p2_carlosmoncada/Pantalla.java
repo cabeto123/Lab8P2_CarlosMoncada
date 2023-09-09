@@ -908,49 +908,56 @@ public class Pantalla extends javax.swing.JFrame {
             Nadador2 nadadortwo=new Nadador2(distancia, jProgressBar2);
             
             Nadador3 nadadorthree=new Nadador3(distancia, jProgressBar3);
+           boolean ganador1=false;
+           boolean ganador2=false;
+           boolean ganador3=false;
+           nadadorone.start();
+             
+             
+                       nadadortwo.start();
+             
+             
+                       nadadorthree.start();
+           int contjugador=0;
            
-            
-            for (int i = 0; i < 3; i++) {
-                int random=(int) ((Math.random() * (10 - 0)) + 0);
-                nadadorone.start();
-                
-                nadadortwo.start();
-                 nadadorthree.start();
-                if (nadadorone.isGanador()) {
-                    if (nadadortwo.isGanador()) {
-                        if (nadadorthree.isGanador()) {
-                            switch (i) {
-                                case 0:
-                                    
-                                    nadadorone.setRandom(random);
-                                    break;
-                                case 1:
-                                    nadadortwo.setRandom(random);
-                                    break;
-                                    case 2:
-                                    nadadorthree.setRandom(random);
-                                    break;
-                            }
-                        }else{
-                        i=10;
-                        }
-                    }else{
-                        i=10;
-                    }
-                }else{
-                    i=10;
-                }
- 
-        }
+           while(ganador1==false&&ganador2==false&&ganador3==false) {
+               if (contjugador==3) {
+                   contjugador=1;
+               }
+               
+            int random=(int) ((Math.random() * (10- 1)) + 1);
+               switch (contjugador) {
+                   case 1:
+                       
+                       nadadorone.setRandom(random);
+                       
+                       break;
+                   case 2:
+                       nadadortwo.setRandom(random);
+                       break;
+                   case 3:
+                       nadadorthree.setRandom(random);
+                       break;
+                   
+               }
             if (nadadorone.isGanador()) {
+                ganador1=true;
                 JOptionPane.showMessageDialog(this, "Gano el nadador 1");
+                break;
             }
             if (nadadortwo.isGanador()) {
+                ganador2=true;
                 JOptionPane.showMessageDialog(this, "Gano el nadador 2");
+                break;
             }
             if (nadadorthree.isGanador()) {
+                ganador3=true;
                 JOptionPane.showMessageDialog(this, "Gano el nadador 3");
-            }
+                break;
+            }   
+            contjugador++;
+           }
+            
         }
         
 

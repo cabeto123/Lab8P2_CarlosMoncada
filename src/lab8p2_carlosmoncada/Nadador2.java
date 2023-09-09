@@ -13,7 +13,7 @@ import javax.swing.JProgressBar;
 public class Nadador2 extends Thread {
    int distancia;
     JProgressBar pg;
-    int random=2;
+    int random=0;
     boolean ganador;
     
     public Nadador2(int distancia, JProgressBar pg) {
@@ -28,8 +28,12 @@ public class Nadador2 extends Thread {
         while (pg.getValue()<distancia) {            
           pg.setValue(pg.getValue()+random);
             try {
-                Thread.sleep(2000);
+                Thread.sleep(1000);
             } catch (Exception e) {
+            }
+            if (pg.getValue()==distancia) {
+               ganador=true; 
+               break;
             }
         }
     
