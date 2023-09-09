@@ -525,6 +525,7 @@ public class Pantalla extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear Nadador", jPanel3);
 
+        listaeventos.setModel(new DefaultListModel());
         jScrollPane5.setViewportView(listaeventos);
 
         jButton8.setText("Eliminar ");
@@ -713,6 +714,7 @@ public class Pantalla extends javax.swing.JFrame {
         DefaultComboBoxModel modeloeventod = (DefaultComboBoxModel) cb_eventosimulacion.getModel();
         modeloeventod.addElement(eventos.get(eventos.size() - 1));
         cb_eventosimulacion.setModel(modeloeventod);
+        JOptionPane.showMessageDialog(this, "Agregado");
 
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -902,19 +904,24 @@ public class Pantalla extends javax.swing.JFrame {
         
         if (dixtancia == true && es == true) {
             Nadador1 nadadorone=new Nadador1(distancia, jProgressBar1);
-            nadadorone.start();
+            
             Nadador2 nadadortwo=new Nadador2(distancia, jProgressBar2);
-            nadadortwo.start();
+            
             Nadador3 nadadorthree=new Nadador3(distancia, jProgressBar3);
-            nadadorthree.start();
+           
             
             for (int i = 0; i < 3; i++) {
                 int random=(int) ((Math.random() * (10 - 0)) + 0);
+                nadadorone.start();
+                
+                nadadortwo.start();
+                 nadadorthree.start();
                 if (nadadorone.isGanador()) {
                     if (nadadortwo.isGanador()) {
                         if (nadadorthree.isGanador()) {
                             switch (i) {
                                 case 0:
+                                    
                                     nadadorone.setRandom(random);
                                     break;
                                 case 1:
